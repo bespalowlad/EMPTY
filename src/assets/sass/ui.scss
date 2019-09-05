@@ -1,0 +1,310 @@
+@import '../helpers/sass/starter.scss';
+@import '../helpers/sass/normalize.scss';
+@import '../helpers/sass/animate.scss';
+@import '../helpers/sass/mixins.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+
+$font-dir: '../assets/fonts';
+
+// /* 3 CormorantGaramond */
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-Regular', 400, normal, woff woff2);
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-Regular', 400, normal, ttf);
+
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-Light', 300, normal, woff woff2);
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-Light', 300, normal, ttf);
+
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-SemiBold', 600, normal, woff woff2);
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-SemiBold', 600, normal, ttf);
+
+// @include font-face('Montserrat', '#{$font-dir}/Montserrat/Montserrat-Bold', 900, normal, woff woff2);
+// @include font-face('Din', '#{$font-dir}/DINPro', normal, normal, ttf);
+// @include font-face('Din', '#{$font-dir}/DINPro-Medium', 500, normal, ttf);
+
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#app {
+    min-width: 100%;
+    overflow: hidden;
+}
+
+* {
+    // font-size: 0;
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+// p {
+//     margin: 25px 0;
+// }
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // font: 18px/23px 'FuturaPT', Arial, Helvetica, sans-serif;
+    -webkit-overflow-scrolling:touch;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    // overflow-y: scroll;
+}
+
+// .modal-opened {
+//     position: fixed;
+// }
+
+button {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+.aos-no-animate {
+    transition: none !important;
+}
+
+[data-no-aos] {
+    transition: none;
+}
+
+.aos-hidden {
+    visibility: hidden;
+}
+
+.form {
+    .fieldset {
+        position: relative;
+        margin-bottom: 18px;
+        z-index: 0;
+        transition: border-color .4s ease;
+        &__placeholder {
+            font-family: 'GothamPro';
+            font-size: 11px;
+            letter-spacing: .5px;
+            line-height: 17px;
+            position: absolute;
+            top: 9px;
+            left: 0;
+            transition: all .2s linear;
+            z-index: -1;
+        }
+        input, textarea {
+            display: block;
+            width: 100% !important;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            resize: none;
+            // font: 500 13px/1 'GothamPro', Arial, Helvetica, sans-serif;
+            // letter-spacing: .6px;
+
+            &::placeholder {
+                
+            }
+            border-bottom: 1px solid rgba(#fff, .4);
+            transition: border-color .5s ease;
+        }
+        // textarea {
+        //     min-height: 79px;
+        // }
+        &__btn {
+            padding-left: 8px;
+        }
+        &.has-error {
+            input, textarea {
+                border-color: #9F1F1F;
+            }
+        }
+    }
+    // .focus {
+    //     .fieldset {
+    //         &__placeholder {
+    //             transform: translate3d(0,-25px,1px);
+    //             font-size: 11px;
+    //         }
+    //     }
+    // }
+}
+
+/** Transitions */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
+
+/** UI */
+
+.h2 {
+    font-family: "GothamPro";
+    color: #fff;
+    font-size: 1.55em;
+    font-weight: 600;
+    line-height: 66.04px;
+    text-transform: uppercase;
+    // text-align: center;
+    margin-bottom: 29px;
+    span {
+        font-size: 1.1em;
+        background: linear-gradient(to right, rgba(195,161,54,1) 0%,rgba(234,210,153,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+.p1 {
+    font-family: "GothamPro";
+    color: #fff;
+    font-size: .711em;
+    font-weight: 300;
+    line-height: 35.56px;
+    letter-spacing: -0.17px;
+    // text-align: center;
+}
+
+.btn {
+    &__green {
+        position: relative;
+        // width: 241px;
+        padding: 0 60px;
+        height: 60px;
+
+        color: #fff;
+        font-family: "GothamPro";
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -0.16px;
+
+        box-shadow: inset 0 0 10px rgba(0, 195, 27, 0.1);
+        border-radius: 30px;
+        background-color: #007a11;
+
+        transition: color .25s ease;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background-image: linear-gradient(to top, #01610d 0%, #014e0b 36%, #008a13 100%);
+            transition: opacity .5s ease;
+            z-index: -1;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;background-image: linear-gradient(to top, #014e0b 0%, #014e0b 5%, #007d11 50%, #014f0b 93%, #014f0b 100%);
+            transition: opacity .5s ease;
+            z-index: -1;
+        }
+        &:hover {
+            color: #00440b;
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    &__light {
+        position: relative;
+        // width: 241px;
+        padding: 0 60px;
+        height: 61px;
+        box-shadow: inset 0 0 21px rgba(240, 223, 148, 0.54);
+        border-radius: 30px;
+        border: 8px solid #003406;
+        background-color: #ffffff;
+        color: #003406;
+        font-family: "GothamPro";
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -0.16px;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background: linear-gradient(to top, #ac8839 0%, #d4b65b 32%, #f5e69c 70%, #b28d3c 100%);
+            transition: opacity .5s ease;
+            z-index: -1;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background: linear-gradient(to bottom, rgba(132,101,32,1) 0%,rgba(212,182,91,1) 50%,rgba(132,101,32,1) 100%);
+            transition: opacity .5s ease;
+            z-index: -1;
+        }
+        &:hover {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.transitionNone {
+    transition: none !important;
+}
+.controls {
+    z-index: 100;
+    &__arrow {
+        position: absolute;
+        // transform: translateX(-50%);
+        &-left {
+            // left: calc(50% - 50px);
+            left: 10px;
+        }
+        &-right {
+            // left: calc(50% + 50px);
+            right: 10px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
