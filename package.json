@@ -13,7 +13,7 @@
     "axios": "^0.18.0",
     "core-js": "^2.6.0",
     "dragdealer": "^0.10.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "ks-vue-fullpage": "^1.2.8",
     "ks-vue-scrollmagic": "^1.0.2",
     "node-sass": "^4.9.4",
