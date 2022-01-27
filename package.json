@@ -17,7 +17,7 @@
     "ks-vue-fullpage": "^1.2.8",
     "ks-vue-scrollmagic": "^1.0.2",
     "node-sass": "^4.9.4",
-    "three": "^0.103.0",
+    "three": "^0.137.0",
     "vue": "^2.5.17",
     "vue-awesome-swiper": "^3.1.3",
     "vue-fullpage.js": "0.0.9",
